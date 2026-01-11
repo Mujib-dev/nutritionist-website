@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+     <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+</head>
+<body>
+    
+     <header class="main-header">
+
+        <!-- Left - Logo -->
+        <div class="logo-area">
+            <img src="images/logo.jpg" alt="Logo" class="logo">
+            <span class="site-title">My GIS Platform</span>
+        </div>
+
+        <!-- Hamburger -->
+        <i class="fas fa-bars menu-toggle" id="toggleBtn"></i>
+
+        <!-- Menu -->
+        <nav class="nav-menu" id="navMenu">
+
+            <a href="Home.html">Home</a>
+            <a href="Project.html">Projects</a>
+            <a href="#">GIS Map</a>
+            <a href="#">Billion Trees Project</a>
+            <a href="contact.html">Contact</a>
+
+            <!-- Login stays LAST -->
+            <a href="#" class="login-btn">
+                <img src="images/logo.jpg" class="user-icon">
+                Login
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+<br><br><br><br><br>
+<h2>📍 Find a Nutritionist Near You</h2>
+
+<div class="controls">
+  <label>Distance (km): </label>
+  <select id="distanceFilter">
+    <option value="5">5 km</option>
+    <option value="10">10 km</option>
+    <option value="20">20 km</option>
+    <option value="50">50 km</option>
+  </select>
+</div>
+
+<div id="map"></div>
+
+
+
+
+<br><br><br><br><br>
+
+
+
+    <!-- Footer Sections -->
+  <footer class="site-footer">
+  
+    <div class="footer-container">
+
+        <!-- LOGO / BRAND -->
+        <div class="footer-brand">
+            <img src="images/logo.jpg" alt="Logo">
+            <h3>MyWebsite</h3>
+        </div>
+
+
+        <!-- NAV LINKS -->
+        <div class="footer-links">
+            <a href="Home.html">Home</a>
+            <a href="Project.html">Project</a>
+            <a href="GIS Map.html">GIS Map</a>
+            <a href="#">Billion Tree Project</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+
+        <!-- SOCIAL LINKS -->
+
+        <div class="social-row">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-linkedin-in"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+        © 2025 MyWebsite — All Rights Reserved
+    </div>
+
+</footer> 
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/script.js"></script>
+
+
+</body>
+</html>

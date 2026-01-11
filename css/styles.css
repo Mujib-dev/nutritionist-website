@@ -1,0 +1,1298 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-family:"Poppins",Arial,sans-serif;
+}
+
+/* HEADER */
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0c593c;
+    padding: 12px 25px;
+    color: #fff;
+    position: relative;
+    height: 20vh;
+}
+
+/* LOGO */
+.logo-area {
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo {
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    height: 40px;
+}
+
+
+.site-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* NAV MENU */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 999;
+}
+
+.nav-menu a{
+    color:#ffffff;
+    text-decoration:none;
+    font-size:15px;
+    position:relative;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+}
+.nav-menu a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    background:#00ffb3;
+    left:0;
+    bottom:-4px;
+    transition:0.3s;
+}
+
+.nav-menu a:hover::after{
+    width:100%;
+    
+}
+.nav-menu a:hover{
+    color:#14f3b4;
+}
+
+
+
+/* LOGIN */
+.login-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.user-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    display: none !important;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block !important;
+    }
+
+    .nav-menu{
+        position:absolute;
+        top:65px;
+        right:0;
+        width:100%;
+        background:#0c593c;
+
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:10px 0;
+    }
+
+    .nav-menu.active{
+        display:flex;
+    }
+
+    .nav-menu a{
+        width:100%;
+        padding:12px 25px;
+    }
+  
+}
+
+.nav-menu a {
+    order: 1;
+}
+
+.nav-menu a:nth-child(1) { order: 1; }
+.nav-menu a:nth-child(2) { order: 2; }
+.nav-menu a:nth-child(3) { order: 3; }
+.nav-menu a:nth-child(4) { order: 4; }
+.nav-menu a:nth-child(5) { order: 5; }
+
+.nav-menu .login-btn {
+    order: 99; /* ALWAYS LAST */
+}
+
+
+/* ===================================== */
+/* HERO SECTION                          */
+/* ===================================== */
+
+.hero{
+    height:100vh;
+
+    background:
+      url("../images/bg.jpg")
+      center/cover no-repeat;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+}
+
+/* Dark overlay for readability */
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+}
+
+/* CONTENT */
+.hero-content{
+    position:relative;
+    max-width:600px;
+
+    margin-left:80px;
+    color:white;
+}
+
+.hero-content h1{
+    font-size:56px;
+    margin-bottom:10px;
+}
+
+.hero-content p{
+    font-size:18px;
+    line-height:1.5;
+    margin-bottom:25px;
+}
+
+/* BUTTONS */
+.hero-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.btn{
+    padding:12px 24px;
+    text-decoration:none;
+    border-radius:25px;
+    font-weight:bold;
+    transition:0.2s;
+}
+
+
+.btn.secondary{
+    border:2px solid white;
+    color:white;
+}
+
+.btn.secondary:hover{
+    background:white;
+    color:black;
+}
+
+/* RESPONSIVE HERO */
+@media (max-width:768px){
+
+    .hero-content{
+        margin-left:25px;
+        max-width:90%;
+    }
+
+    .hero-content h1{
+        font-size:36px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        width:max-content;
+    }
+}
+
+/* ===================================== */
+/* BRAND SINGLE LINE                     */
+/* ===================================== */
+
+.brand-strip{
+    background:#000000;
+    padding:44px 10px;
+}
+
+.brand-line{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    gap:40px;
+    font-weight:600;
+    letter-spacing:1px;
+    color:#333;
+    flex-wrap:nowrap;   /* ✅ FORCE single line */
+    white-space:nowrap;
+}
+
+.brand-line span{
+    font-size:26px;
+    color: white;
+}
+
+@media(max-width:768px){
+    .brand-line{
+        gap:18px;
+    }
+
+    .brand-line span{
+        font-size:14px;
+    }
+}
+
+
+
+/* Main Container: Split Screen */
+.container {
+    
+    display: flex;
+    height: 150vh;
+    width: 100%;
+    margin-top: 100px;
+    background-color: #eeebe6; /* Slightly warm light gray */
+}
+
+/* Left Side: Image */
+.image-section {
+    flex: 1; /* Takes up 50% width */
+    overflow: hidden;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers area without stretching */
+    display: block;
+}
+
+/* Right Side: Content */
+.content-section {
+    flex: 1; /* Takes up 50% width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+   
+}
+
+/* Header Typography */
+.header-text {
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 400px;
+}
+
+.header-text h1 {
+    font-family: 'Playfair Display', serif; /* Serif font for title */
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.header-text p {
+    font-size: 0.9rem;
+    color: #555;
+    cursor: pointer;
+}
+
+/* The Menu Box with Border */
+.menu-card {
+    border: 2px solid #000;
+    padding: 3rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Grid Layout Inside the Box */
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 3rem; /* Space between columns and rows */
+}
+
+.grid-item h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.grid-item p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 1rem;
+    cursor: text;
+}
+
+/* Helper class for JS interaction */
+.editing {
+    outline: 2px dashed #999;
+    padding: 2px;
+    background-color: white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-section {
+        height: 300px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr; /* Stack vertically on mobile */
+        gap: 2rem;
+    }
+    
+    .menu-card {
+        padding: 1.5rem;
+    }
+}
+
+
+/*
+=====================================
+  Global Reset and Base Styles
+=====================================
+*/
+html, body {
+    margin: 0;
+    padding: 0;
+    /* Ensure the body takes full viewport height */
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    box-sizing: border-box; /* Set box-sizing globally */
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/*
+=====================================
+  Main Layout
+=====================================
+*/
+/* Main container for the split-screen layout */
+.container_1 {
+    display: flex;
+    /* Use 100vh to ensure it fills the viewport on initial load */
+    min-height: 100vh;
+    margin-top: 80px;
+}
+
+/*
+=====================================
+  Left Panel Styling (Content/Text)
+=====================================
+*/
+.left-panel {
+    /* Base: 2/5 width */
+    flex: 2.4;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    /* Center content in the middle of the panel */
+    justify-content: center;
+    align-items: center;
+    /* Use padding instead of padding-left for better mobile handling */
+    padding: 2rem;
+}
+
+.content {
+    /* Limits text width for better readability */
+    max-width: 400px;
+    width: 100%; /* Ensure content respects padding */
+    text-align: left;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw + 1rem, 3.5rem); /* Responsive font size */
+    font-weight: 700; /* Increased weight for impact */
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.2rem); /* Responsive font size */
+    line-height: 1.6;
+    margin-bottom: 2rem; /* Reduced margin */
+}
+
+button {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 1rem 2rem; /* Slightly reduced horizontal padding */
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase; /* Added style */
+    letter-spacing: 0.05em; /* Added style */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/*
+=====================================
+  Right Panel Styling (Media)
+=====================================
+*/
+.right-panel {
+    /* Base: 3/5 width */
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top half with the image */
+.top-image {
+    /* Takes up 50% of the right panel's height */
+    flex: 1;
+    overflow: hidden;
+    min-height: 50%; /* Added minimum height to ensure equal split */
+}
+
+.top-image img {
+    width: 100%;
+    height: 100%;
+    /* Ensure image covers the area, cropping if needed */
+    object-fit: cover;
+    /* Focus on the bottom part of the image */
+    object-position: center bottom;
+    display: block; /* Removes potential image bottom margin */
+}
+
+/* Bottom half with solid gray color */
+.bottom-block {
+    /* Takes up 50% of the right panel's height */
+    flex: 1;
+    background-color: #C4C4C4;
+    min-height: 50%; /* Added minimum height to ensure equal split */
+}
+
+/*
+=====================================
+  Responsive Design (Mobile/Tablet)
+=====================================
+*/
+/* Applies when the viewport is 768px wide or less */
+@media screen and (max-width: 768px) {
+    /* Collapse the flex direction to stack panels vertically */
+    .container_1 {
+        flex-direction: column;
+        /* Allow the height to grow based on content */
+        min-height: auto;
+    }
+
+    /* Left panel takes full width */
+    .left-panel {
+        flex: none; /* Reset flex */
+        width: 100%;
+        /* Adjust padding for mobile view */
+        padding: 3rem 1.5rem;
+        /* Center content horizontally */
+        justify-content: flex-start;
+        /* Allow content to push the height */
+        min-height: auto;
+    }
+
+    .content {
+        /* Allow content to take up more space on mobile */
+        max-width: 100%;
+        text-align: center; /* Center the text on mobile */
+    }
+
+    h1, p {
+        /* Re-align text to center for mobile readability */
+        text-align: center;
+    }
+
+    /* Right panel (media) also takes full width */
+    .right-panel {
+        flex: none; /* Reset flex */
+        width: 100%;
+    }
+
+    .top-image, .bottom-block {
+        /* Assign a fixed height so the media panel doesn't disappear,
+           but isn't excessively large either. */
+        min-height: 250px;
+        flex: none;
+    }
+}
+
+
+
+
+/* =====================================
+  Main Three-Column Layout
+===================================== */
+
+.project-title{
+    text-align: center;
+    padding-top: 50px;
+}
+
+.three-column-container {
+    display: flex;
+    /* Ensure the container takes up the remaining viewport space */
+    min-height: calc(100vh - 60px); 
+}
+
+/* ----- Side Panel Styling (Blurred Images) ----- */
+.side-panel {
+    /* Side panels take 1 unit of space */
+    flex: 1; 
+    /* Set a minimum width for the side panels on large screens */
+    min-width: 150px; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Apply the blur effect */
+    filter: blur(8px);
+    transform: scale(1.05); /* Counteracts blur edges */
+}
+
+/* Specific background images (Use your own image paths here) */
+.left-panel {
+    background-image: url('placeholder-left.jpg');
+    /* Using a placeholder image for demonstration. Replace with your file path */
+    background-image: url('https://via.placeholder.com/600x1000/6A5A4A/FFFFFF?text=Blurred+Left'); 
+}
+
+.right-panel {
+    background-image: url('placeholder-right.jpg');
+    background-image: url('https://via.placeholder.com/600x1000/F0E0D0/FFFFFF?text=Blurred+Right');
+}
+
+/* ----- Center Content Panel ----- */
+.center-content {
+    /* Center panel takes the most space, visually 2-3 units */
+    flex: 2.5; 
+    background-color: #f7f3ed; /* Light beige/cream color from the image */
+    padding: 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center; /* Vertically center content */
+    max-width: 800px;
+}
+
+/* Title Styling (Script Font) */
+.script-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-style: italic;
+    font-weight: 500;
+    color: #a08040; /* Golden/Bronze color */
+    margin: 0;
+    line-height: 1;
+}
+
+.tagline {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 2rem;
+}
+
+.body-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 450px;
+}
+
+.action-link {
+    font-style: italic;
+    text-decoration: none;
+    color: #a08040;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.action-link:hover {
+    color: #886830;
+}
+
+
+/*
+=====================================
+  Responsive Design (Mobile)
+=====================================
+*/
+@media screen and (max-width: 768px) {
+
+
+    /* Main Layout: Collapse the side panels */
+    .three-column-container {
+        flex-direction: column;
+    }
+
+    .side-panel {
+        /* Hide side panels or give them a minimal height/width on mobile */
+        display: none; 
+    }
+
+    .center-content {
+        /* Center content takes full width */
+        flex: none;
+        width: 100%;
+        padding: 3rem 1.5rem;
+    }
+
+    .script-title {
+        font-size: 3rem;
+    }
+}
+
+/* MAIN SECTION */
+.about-section{
+    width:100%;
+    height:100vh;
+    display:flex;
+}
+
+/* IMAGE PANELS */
+.image-panel{
+    flex:1;
+    background-size:cover;
+    background-position:center;
+}
+
+/* Left & Right images (replace paths if needed) */
+.left1{
+    background-image: url('https://picsum.photos/1200/800?food');
+}
+
+.right1{
+    background-image: url('https://picsum.photos/1200/800?cooking');
+}
+
+/* CENTER PANEL */
+.content-panel{
+    flex:1.2;
+    background:#a19c92;
+    padding:70px 40px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    justify-content:center;
+}
+
+.content-panel h1{
+    font-family:"Playfair Display", serif;
+    font-size:3.5rem;
+    margin-bottom:10px;
+    color:#7c5e2e;
+}
+
+.content-panel h4{
+    letter-spacing:3px;
+    font-size:14px;
+    font-weight:400;
+    margin-bottom:30px;
+    color:#444;
+}
+
+.content-panel p{
+    max-width:420px;
+    font-size:15px;
+    line-height:24px;
+    color:#111;
+    margin-bottom:15px;
+}
+
+/* BUTTON */
+.btn{
+    margin-top:20px;
+    color:#7c5e2e;
+    text-decoration:none;
+    font-size:15px;
+    letter-spacing:1px;
+    border-bottom:1px solid #7c5e2e;
+    padding-bottom:3px;
+    transition:.3s;
+}
+
+.btn:hover{
+    letter-spacing:3px;
+}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+
+    .about-section{
+        flex-direction:column;
+        height:auto;
+    }
+
+    .image-panel{
+        width:100%;          /* allow full width */
+        height:320px;       /* visible height */
+        min-height:320px;   /* prevents collapse */
+        flex:none;          /* stop flex shrink bug */
+        display:block;     /* ensure visible */
+    }
+
+    .content-panel{
+        width:100%;
+        padding:50px 20px;
+    }
+
+    .content-panel h1{
+        font-size:2.5rem;
+    }
+}
+
+
+
+
+/* Gallery Container */
+.gallery-container {
+    display: flex;
+    gap: 15px; /* Space between images */
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Individual Card Styling */
+.card {
+    position: relative; /* Essential for the overlay */
+    flex: 1; /* Each card takes equal width */
+    height: 300px; /* Fixed height for uniformity */
+    overflow: hidden; /* Hides image zoom spillover */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Image Styling */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills box without stretching */
+    transition: transform 0.4s ease; /* Smooth zoom effect */
+}
+
+/* Hover Overlay Styling */
+.card-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent overlay */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    
+    /* Hidden State */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    transform: translateY(20px); /* Push down slightly for animation */
+    transition: transform 0.3s ease;
+}
+
+.card-details p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    transform: translateY(20px);
+    transition: transform 0.3s ease 0.1s; /* Slight delay */
+}
+
+/* Hover Actions */
+.card:hover .card-details {
+    opacity: 1; /* Show overlay */
+}
+
+.card:hover img {
+    transform: scale(1.1); /* Zoom image slightly */
+}
+
+.card:hover .card-details h3,
+.card:hover .card-details p {
+    transform: translateY(0); /* Slide text up into place */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .gallery-container {
+        flex-direction: column;
+    }
+}
+
+
+/* =============================
+          FOOTER
+============================= */
+
+.site-footer{
+    background:#0c593c;
+    color:#ffffff;
+    padding:40px 20px 15px;
+    font-family: "Poppins","Segoe UI",sans-serif;
+}
+
+/* MAIN FLEX */
+.footer-container{
+    max-width:1100px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+/* BRAND */
+.footer-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.footer-brand img{
+    width:50px;
+    height:50px;
+    
+    border-radius: 50%;
+}
+
+.footer-brand h3{
+    font-size:20px;
+    letter-spacing:1px;
+}
+
+/* LINKS */
+.footer-links{
+    display:flex;
+    gap:20px;
+}
+
+.footer-links a{
+    color:#ffffff;
+    text-decoration:none;
+    font-size:15px;
+    position:relative;
+}
+
+.footer-links a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    background:#00ffb3;
+    left:0;
+    bottom:-4px;
+    transition:0.3s;
+}
+
+.footer-links a:hover::after{
+    width:100%;
+}
+.footer-links a:hover{
+    color:#14f3b4;
+}
+
+/* SOCIAL ICONS */
+.footer-social{
+    display:flex;
+    gap:15px;
+}
+
+.footer-social a{
+    width:36px;
+    height:36px;
+    background:#ffffff;
+    color:#ffffff;
+
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.footer-social a:hover{
+    background:#ffffff;
+}
+
+
+/* BOTTOM BAR */
+.footer-bottom{
+    text-align:center;
+    padding-top:20px;
+    font-size:13px;
+    color:#ddd;
+    border-top:1px solid rgba(255,255,255,0.2);
+}
+
+
+/* =============================
+         RESPONSIVE
+============================= */
+
+@media(max-width:768px){
+
+    .footer-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-brand{
+        justify-content:center;
+    }
+
+    .footer-links{
+        flex-direction:column;
+        gap:10px;
+    }
+}
+
+/* About Sections */
+/* Main layout — 20% / 60% / 20% */
+.three-items-layout {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    padding: 20px 0;
+}
+
+/* Center area holding exactly 3 items */
+.center-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items */
+    gap: 20px;
+}
+
+/*Each item box */
+.item {
+    
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Responsive for tablet */
+@media (max-width: 900px) {
+    .three-items-layout {
+        grid-template-columns: 10% 80% 10%;
+    }
+
+    .center-content {
+        grid-template-columns: repeat(2, 1fr); /* Show 2 items */
+    }
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+    .three-items-layout {
+        grid-template-columns: 0 100% 0; /* Remove empty sides */
+    }
+
+    .center-content {
+        grid-template-columns: 1fr; /* 1 item */
+    }
+}
+
+
+/* About Contact Area  */
+/* Main Structure */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    padding: 50px 0;
+    background: #f4f4f4;
+}
+
+/* Center Content */
+.center-contents {
+    text-align: center;
+}
+
+/* Heading & Paragraph */
+.center-contents h2 {
+    font-size: 32px;
+    color: #0c593c;
+    margin-bottom: 10px;
+}
+.center-contents p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Social Icons */
+.social-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.social-row1{
+    color: #083d2a;
+}
+.social-row i {
+    cursor: pointer;
+    transition: 0.3s;
+}
+.social-row i:hover {
+    transform: scale(1.2);
+    /* color: #083d2a; */
+}
+
+
+/* Contact Form */
+.form-area {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-area input,
+.form-area textarea {
+    width: 50%;
+    padding: 14px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+    margin: 0 auto;
+}
+
+.form-area input:focus,
+.form-area textarea:focus {
+    border-color: #0c593c;
+}
+
+.form-area textarea {
+    height: 130px;
+    resize: none;
+}
+
+.form-area button {
+    background: #0c593c;
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 30%;
+    margin: auto;
+}
+.form-area button:hover {
+    background: #083d2a;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contact-layout {
+        grid-template-columns: 10% 80% 10%;
+    }
+    .three-boxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-layout {
+        grid-template-columns: 0 100% 0;
+    }
+    .three-boxes {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Contact Page css */
+.contact-us{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 1.6rem;
+}
+/* Main Layout */
+.contact-split {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    min-height: 100vh;
+    background: #aaa;
+    margin-bottom: 50px;
+}
+
+/* Left Image */
+.contact-image {
+    background: url("https://images.unsplash.com/photo-1499028344343-cd173ffc68a9") center/cover no-repeat;
+}
+
+/* Right Content */
+.contact-form-wrapper {
+    background: #9b9b9b;
+    padding: 80px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-form-wrapper h2 {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.contact-form-wrapper p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Form */
+.contact-form {
+    max-width: 500px;
+}
+
+.form-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.field {
+    width: 100%;
+}
+
+.field label {
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #000;
+    background: transparent;
+    padding: 8px 0;
+    font-size: 16px;
+    outline: none;
+}
+
+.field textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Button */
+.contact-form button {
+    margin-top: 40px;
+    background: #000;
+    color: #fff;
+    padding: 15px 40px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #333;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contact-split {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-image {
+        height: 300px;
+    }
+
+    .contact-form-wrapper {
+        padding: 50px 30px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+ #map {
+      height: 500px;
+      width: 80%;
+      margin-top: 10px;
+      margin: auto;
+    }
+    .controls {
+      margin: 10px 0;
+    }
